@@ -1,0 +1,271 @@
+/*  import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Comforter&family=Kaushan+Script&family=Oxygen&family=Pacifico&family=Syne+Tactile&family=Yellowtail&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Courgette&family=Dancing+Script:wght@700&family=Lobster&family=Lobster+Two:ital,wght@1,700&family=Pacifico&family=Poppins:wght@400;500;600;700&family=Quintessential&family=Ubuntu:wght@500;700&family=Yanone+Kaffeesatz:wght@200;300;400;500;600;700&display=swap');
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #787777;
+  border-radius: 10px;
+  
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #848484;
+}
+
+
+
+
+/************ Default Css ************/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+
+  
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  color: #fff !important;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  background-color: white;
+}
+
+
+
+
+@media (min-width:1700px) {
+	main .container {
+		max-width: 100%;
+		padding: 0 150px;
+	}
+}
+
+p.success {
+	color: green;
+}
+
+p.danger {
+	color: red;
+}
+/************ Banner Css ************/
+.banner {
+  margin:auto;
+  padding: 160px 20px 230px 20px;
+  background-image: url('./assets/images/backgroundBanner.jpg');
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 600px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.banner .tagline {
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 3px 10px;  
+  font-size: 25px;
+  margin-bottom: 1px;
+  display: inline-block;
+  color:#EF5B0C ;
+}
+.banner h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 20px;
+  display: block;
+  color:#13e400;
+}
+
+.banner h1 .fsb{
+  color: #00ccff;
+}
+
+.banner h1 .txt-rotate{
+  color: #EF5B0C;
+  font-weight: 600;
+  font-size: 36px;
+}
+
+@media screen and (max-width: 600px) {
+  .banner h1 {
+    font-size: 28px;
+  }
+  .banner h1 .txt-rotate{
+    font-size: 28px;
+  }
+}
+
+
+
+.banner p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  width: 96%;
+}
+.banner button {
+  color: #EF5B0C;
+  background-image: linear-gradient(to left, #EF5B0C, #f89966);
+  font-weight: 500;
+  font-size: 25px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.banner button svg {
+  font-size: 25px;
+  margin-left: 10px;
+  transition: 0.3s ease-in-out;
+  line-height: 1;
+}
+.banner button:hover svg {
+  margin-left: 25px;
+}
+
+.banner button .myresume{
+  color: white;
+  font-weight: 600;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.banner button .myresume:hover{
+  color: rgb(0, 255, 255);
+  font-weight: 600;
+  font-size: 22px;
+  
+}
+
+
+
+
+
+
+
+.banner img {
+  animation: updown 3s linear infinite;
+}
+@keyframes updown {
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+.txt-rotate > .wrap {
+  border-right: 0.08em solid #666;
+}
+
+
+
+
+
+
+
+span {
+  white-space: nowrap;
+}
+
+.heading-text.heading-section h2::before {
+  content: unset;
+}
+
+.heading-text.heading-line h1::before,
+.heading-text.heading-line h2::before,
+.heading-text.heading-line h3::before,
+.heading-text.heading-line h4::before,
+.heading-text.heading-line h5::before,
+.heading-text.heading-line h6::before {
+  content: unset !important;
+}
+
+.step_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff8b2a;
+  color: white;
+  height: 35px;
+  width: 35px;
+  border-radius: 35px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: medium;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.icon-box.border.small .icon {
+  height: 22px;
+  width: 22px;
+}
+
+.icon-box.medium > p {
+  margin: 0 12px 10px 36px;
+}
+
+.icon-box.medium > h3,
+.icon-box.medium > h4,
+.icon-box.medium > h5 {
+  margin: 0 12px 10px 36px;
+}
+.icon-box.border:hover > .icon {
+  border: 6px solid #ff8b2a;
+}
+
+@media only screen and (max-width: 990px) {
+  .step_paragraph {
+    display: none;
+  }
+
+  .step_title {
+    overflow-wrap: anywhere;
+  }
+
+  .authenticate-btn {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 990px) {
+  .authenticate-btn_active {
+    display: none;
+  }
+}

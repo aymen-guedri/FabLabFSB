@@ -1,0 +1,77 @@
+{
+  "select_language": "Select Language",
+  "hello_welcome_to_react": "Hello, Welcome to React EN",
+  "about": "Who we are ?",
+  "Platforme": "The Platform",
+  "Events": "Our Events",
+  "prof": "Our Team",
+  "contact": "Contact us",
+  "register": "Register",
+  "login": "Get Started",
+  "offre":"our offers",
+
+  "with":"With",
+  "build_your_own":"Build your own",
+  "3d_Model":"3D Model",
+  "start":"Start now",
+
+  "aboutfablab":"About FSB FabLab",
+  "phone":"Number",
+  "desc":"Fab Lab & Tier Place of Digital Manufacturing and Innovation in New Technologies, that make invention possible by giving individuals access to digital manufacturing tools. Access: you can use the fab lab to make just about anything (as long as it doesn't harm anyone); you must learn to make it yourself, and you must share the use of the lab with other users and users.",
+  "chat":"Let's Talk",
+  "Event": "Events",
+  "offres":"Offers",
+  "team":"Team",
+  "whoweare":"Who we are ?",
+  "developer":"Developer",
+  "contact_title": "Get in touch with us.",
+  "please_enter_name": "Please enter your name",
+
+  "email": "Email",
+  "name": "Name",
+  "services": "Services",
+  "message": "Message",
+  "send_message": "Send message",
+  "dec_team": "It is a pleasure to present to you our creative and brilliant team members who will be with you in every step and be sure that your support will be well appreciated and met with equal respect and effort from each and every one of us.",
+ 
+
+
+
+
+
+  
+  "company_name": "Full Name",
+  "company_name_label": "Enter company name",
+  "email_label": "Enter your email",
+  "message_placeholder": "Enter your message",
+  "authenticate": "Authenticate",
+  "subject_label": "Subject",
+  "phone_label": "Phone Number",
+  "book_a_meeting": "Book a meeting",
+  "search-sign-up": "Sign up",
+  "close_label": "Close",
+  "errorCampanyName":"Please enter your Company Name",
+  "errorEmail":"Please enter your email",
+  "errorsubject":"Please enter the subject",
+  "errortel":"This phone number doesn't look right. please enter a correct phone number",
+  "errormsg":"Please enter your message",
+
+
+
+"find_us":"Find us",
+"call_us":"Call us",
+"mail_us":"Mail us",
+"desc_footer":"Fab Lab & Tier Place of Digital Manufacturing and Innovation in New Technologies",
+"follow":"Follow us",
+"links":"Useful Links",
+"copyright":"CopyRight Ⓒ 2023. All Right Reserved. Developed by"
+
+
+
+
+
+}
+
+
+
+

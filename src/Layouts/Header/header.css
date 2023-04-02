@@ -1,0 +1,136 @@
+/* Custom Dark Mode Toggle Element */
+.toggle-theme-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+
+
+
+.authenticate-btn a{
+  font-size: 22px;
+}
+p{
+  font-size: 22px;
+  margin-left: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 30px;
+
+
+}
+p .tx1{
+  color: green;
+}
+
+p .tx2{
+  color: #00d2f7;
+}
+
+p .tx3{
+  color: orange;
+}
+.toggle-theme-wrapper span {
+  font-size: 28px;
+}
+
+.toggle-theme {
+  position: relative;
+  display: inline-block;
+  height: 34px;
+  width: 60px;
+}
+
+.toggle-theme input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  position: absolute;
+  cursor: pointer;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: 0.2s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+input:checked + .slider {
+  background-color: cornflowerblue;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.logo-dark {
+  height: 120px !important;
+  margin-top: 10px;
+}
+
+.logo-default {
+  height: 120px !important;
+  margin-top: 10px;
+}
+
+.white {
+  color: #fff !important;
+  font-weight: 400;
+}
+
+.logo-text {
+  font: "Raleway";
+}
+
+.logo-text > .rec {
+  display: block;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+}
+
+.logo-text > .sah {
+  font-weight: 800;
+}
+
+.icon-globe_fix {
+  line-height: 0 !important;
+}
+
+.mobileLogo {
+  display: none;
+}
+
+@media only screen and (max-width: 992px) {
+  .desktopLogo {
+    display: none;
+  }
+
+  .mobileLogo {
+    display: inline-block;
+    width: 60px;
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "select_language": "Select Language",
+  "hello_welcome_to_react": "Hello, Welcome to React DE",
+  "about": "À propos",
+  "Platforme": "La plateforme",
+  "Events": "Nos événements",
+  "prof": "Notre équipe",
+  "contact": "Contactez-nous",
+  "register": "Register",
+  "login": "Login",
+  "offre":"Nos offres",
+  
+  "with":"Avec",
+  "build_your_own":"Construisez votre propre",
+  "3d_Model":"Modèle 3D",
+  "start":"Commencez maintenant",
+
+  "aboutfablab":"À propos du FSB FabLab",
+  "phone":"Numéro",
+  "desc":"Fab Lab & Tier Lieu de Fabrication Numérique et d'Innovation en Nouvelles Technologies, qui rendent possible l’invention en donnant aux individus accès à des outils de fabrication numérique. Accès : vous pouvez utiliser le fab lab pour fabriquer à peu près n’importe quoi (dès lors que cela ne nuit à personne) ; vous devez apprendre à le fabriquer vous-même, et vous devez partager l’usage du lab avec d’autres usagers et utilisateurs.",
+  "chat":"contact",
+  "Event": "Evénements",
+  "offres":"Offres",
+  "team":"Equipe",
+  "whoweare":"Qui nous sommes ?",
+  "developer":"Développeur",
+  "contact_title": "Prenez contact avec nous.",
+
+  "email": "E-mail",
+  "name": "Name",
+  "services": "Services",
+  "message": "Message",
+  "send_message": "Envoyer le message",
+ 
+  "dec_team": "C'est un plaisir de vous présenter les membres de notre équipe créative et brillante qui seront avec vous à chaque étape et soyez sûr que votre soutien sera bien apprécié et rencontré avec le même respect et effort de chacun d'entre nous.",
+
+
+
+
+  
+  "company_name": "Nom et prénom",
+  "company_name_label": "Veuillez entrer votre Nom et prénom",
+  "email_label": "Enter your email",
+  "message_placeholder": "Enter your message",
+  "authenticate": "Authenticate",
+  "subject_label": "Sujet",
+  "phone_label": "Numéro de téléphone",
+  "book_a_meeting": "Book a meeting",
+  "search-sign-up": "Sign up",
+  "close_label": "Close",
+  "errorCampanyName":"Veuillez entrer votre Nom et prénom",
+  "errorEmail":"Veuillez saisir votre e-mail",
+  "errorsubject":"Veuillez entrer le sujet",
+  "errortel":"Ce numéro de téléphone ne semble pas correct. veuillez entrer un numéro de téléphone correct",
+  "errormsg":"Veuillez entrer votre message",
+
+
+
+
+
+  "find_us":"Trouve nous",
+  "call_us":"Appelez-nous",
+  "mail_us":"Envoyez-nous un e-mail",
+  "desc_footer":"Fab Lab & Tier Lieu de Fabrication Numérique et d'Innovation en Nouvelles Technologies",
+  "follow":"Suivez-nous",
+  "links":"Liens utiles",
+  "copyright":"CopyRight Ⓒ 2023. Tous droits réservés. Développé par"
+
+
+
+
+}
