@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 import "./ProfileCard.css";
 import Cover from "../../img/cover.jpg";
 import Profile from "../../img/profileImg.jpg";
@@ -9,39 +11,51 @@ const ProfileCard = ({location}) => {
   const posts = useSelector((state)=>state.postReducer.posts)
   const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
 
+
+  const { t } = useTranslation();
+
+  const languageMap = {
+    en: { label: "English", dir: "ltr", active: true },
+    fr: { label: "Français", dir: "ltr", active: false },
+  };
+  const [selectedLang, setSelectedLang] = useState(
+    localStorage.getItem("i18nextLng") || "en"
+  );
+
+
   return (
     <div className="ProfileCard">
-      <div className="ProfileImages">
-        <img src={
-            user.coverPicture
-              ? serverPublic + user.coverPicture
-              : serverPublic + "defaultCover.jpg"
-          } alt="CoverImage" />
-        <img
-          src={
-            user.profilePicture
-              ? serverPublic + user.profilePicture
-              : serverPublic + "defaultProfile.png"
-          }
-          alt="ProfileImage"
-        />
-      </div>
-      <div className="ProfileName">
-        <span>{user.firstname} {user.lastname}</span>
-        <span>{user.worksAt? user.worksAt : 'FabLab FSB User'}</span>
-      </div>
+    <div className="ProfileImages">
+      <img src={
+          user.coverPicture
+            ? serverPublic + user.coverPicture
+            : serverPublic + "defaultCover.jpg"
+        } alt="CoverImage"  />
+      <img
+        src={
+          user.profilePicture
+            ? serverPublic + user.profilePicture
+            : serverPublic + "defaultProfile.png"
+        }
+        alt="ProfileImage"
+      />
+    </div>
+    <div className="ProfileName">
+      <span>{user.firstname} {user.lastname}</span>
+      <span>{user.worksAt? user.worksAt : 'FabLab FSB user'}</span>
+    </div>
 
-      <div className="followStatus">
+    <div className="followStatus">
         <hr />
         <div>
           <div className="follow">
-            
-            <span>Edit Profile</span>
+           
+            <span>4C FSB </span>
           </div>
           <div className="vl"></div>
           <div className="follow">
-            
-            <span>my orders</span>
+           
+            <span>FSB</span>
           </div>
           {/* for profilepage */}
           {location === "profilePage" && (
@@ -49,7 +63,7 @@ const ProfileCard = ({location}) => {
               <div className="vl"></div>
               <div className="follow">
                 
-                <span>WorkShops</span>
+                <span>Edit profile</span>
               </div>{" "}
             </>
           )}
@@ -57,16 +71,16 @@ const ProfileCard = ({location}) => {
         <hr />
       </div>
 
-      {location === "profilePage" ? (
-        ""
-      ) : (
-        <span>
-          <Link to={`/profile/${user._id}`} style={{ textDecoration: "none", color: "inherit" }}>
-            My Profile
-          </Link>
-        </span>
-      )}
-    </div>
+    {location === "profilePage" ? (
+      ""
+    ) : (
+      <span>
+        <Link to={`/profile/${user._id}`} style={{ textDecoration: "none", color: "inherit" }}>
+          My Profile
+        </Link>
+      </span>
+    )}
+  </div>
   );
 };
 
