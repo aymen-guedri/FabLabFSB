@@ -58,8 +58,8 @@ body,
   width: 22rem;
   height: 14rem;
   border-radius: 50%;
-  background: #a6ddf0;
-  filter: blur(72px);
+  background: #00eaff;
+  filter: blur(100px);
 }
 
 .button {

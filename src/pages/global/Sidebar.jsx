@@ -71,32 +71,9 @@ const Sidebar = () => {
       }}
     >
       <ProSidebarProvider collapsed={isCollapsed} >
-        <Menu iconShape="square">
+        <Menu iconShape="square" style={{marginTop:"20px"}}>
           {/* LOGO AND MENU ICON */}
-          <MenuItem
-            onClick={() => setIsCollapsed(!isCollapsed)}
-            icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
-            style={{
-              margin: "10px 0 20px 0",
-              color: colors.grey[100],
-            }}
-          >
-            {!isCollapsed && (
-              <Box
-                display="flex"
-                justifyContent="space-between"
-                alignItems="center"
-                ml="15px"
-              >
-                <Typography variant="h3" color={colors.redAccent[400]}>
-                  FabLabFSB
-                </Typography>
-                <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
-                  <MenuOutlinedIcon />
-                </IconButton>
-              </Box>
-            )}
-          </MenuItem>
+          
 
           {!isCollapsed && (
             <Box mb="25px">
@@ -134,16 +111,19 @@ const Sidebar = () => {
             >
               Data
             </Typography>
+            <Link to="/team" style={{ color: "#FE6000"}}>
             <Item
-              title="Manage Team"
+              title="Team"
               to="/team"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
+            </Link>
+            
             <Item
               title="Users"
-              to="/contacts"
+              to="/users"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -164,27 +144,21 @@ const Sidebar = () => {
               Pages
             </Typography>
             <Item
-              title="Messages"
-              to="/form"
+              title="Forum"
+              to="/"
               icon={<EmailIcon />}
               selected={selected}
               setSelected={setSelected}
             />
-            <Link to="/form" style={{ color: "#FE6000"}}>
+            <Link to="/post" style={{ color: "#FE6000"}}>
             <Item
-              title="Add New Post"
-              to="/form"
+              title="Post"
+              to="/post"
               icon={<PostAddIcon />}
               selected={selected}
               setSelected={setSelected}
             /></Link>
-            <Item
-              title="FAQ Page"
-              to="/faq"
-              icon={<HelpOutlineOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
+            
 
             <Typography
               variant="h6"
@@ -193,27 +167,25 @@ const Sidebar = () => {
             >
               Control Panel
             </Typography>
+            <Link to="/camera" style={{ color: "#FE6000"}}>
             <Item
               title="Camera"
-              to="/bar"
+              to="/camera"
               icon={<CameraAltIcon />}
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
-              title="Door"
-              to="/pie"
-              icon={<RoomPreferencesIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
+            </Link>
+            
+             <Link to="/printer" style={{ color: "#FE6000"}}>
             <Item
               title="3D Printer"
-              to="/line"
+              to="/printer"
               icon={<ThreeDRotationIcon />}
               selected={selected}
               setSelected={setSelected}
             />
+            </Link>
             <Item
               title="Materials"
               to="/geography"
@@ -222,7 +194,10 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
           </Box>
+         
         </Menu>
+
+        
       </ProSidebarProvider>
     </Box>
   );

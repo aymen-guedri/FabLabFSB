@@ -152,7 +152,7 @@ const Auth = () => {
             >
               {isSignUp
                 ? "Already have an account Login"
-                : "Don't have an account Sign up"}
+                : ""}
             </span>
             <button
               className="button infoButton"

@@ -1,109 +1,198 @@
-import { Box, Typography, useTheme } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
-import { tokens } from "../../theme";
-import { mockDataTeam } from "../../Data/mockData";
-import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
-import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
-import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
+import { Box, Button, TextField } from "@mui/material";
+import { Formik } from "formik";
+import * as yup from "yup";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
+import Sidebar from "../../pages/global/Sidebar";
+import Topbar from "../../pages/global/Topbar";
+import PostSide from "../../components/PostSide/PostSide";
+import './AddAdmin.css'
+import React, { useState } from "react";
+import Logo from "../../img/logo.png";
+import { logIn, signUp } from "../../actions/AuthActions.js";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Team = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-  const columns = [
-    { field: "id", headerName: "ID" },
-    {
-      field: "name",
-      headerName: "Name",
-      flex: 1,
-      cellClassName: "name-column--cell",
-    },
-    {
-      field: "age",
-      headerName: "Age",
-      type: "number",
-      headerAlign: "left",
-      align: "left",
-    },
-    {
-      field: "phone",
-      headerName: "Phone Number",
-      flex: 1,
-    },
-    {
-      field: "email",
-      headerName: "Email",
-      flex: 1,
-    },
-    {
-      field: "accessLevel",
-      headerName: "Access Level",
-      flex: 1,
-      renderCell: ({ row: { access } }) => {
-        return (
-          <Box
-            width="60%"
-            m="0 auto"
-            p="5px"
-            display="flex"
-            justifyContent="center"
-            backgroundColor={
-              access === "admin"
-                ? colors.greenAccent[600]
-                : access === "manager"
-                ? colors.greenAccent[700]
-                : colors.greenAccent[700]
-            }
-            borderRadius="4px"
-          >
-            {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
-            {access === "manager" && <SecurityOutlinedIcon />}
-            {access === "user" && <LockOpenOutlinedIcon />}
-            <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
-              {access}
-            </Typography>
-          </Box>
-        );
-      },
-    },
-  ];
+  const isNonMobile = useMediaQuery("(min-width:600px)");
+  const handleFormSubmit = (values) => {
+    console.log(values);
+  };
+  const [isSidebar, setIsSidebar] = useState(true);
+
+  const initialState = {
+    firstname: "",
+    lastname: "",
+    username: "",
+    password: "",
+    confirmpass: "",
+  };
+  const loading = useSelector((state) => state.authReducer.loading);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [isSignUp, setIsSignUp] = useState(true);
+
+  const [data, setData] = useState(initialState);
+
+  const [confirmPass, setConfirmPass] = useState(true);
+
+  // const dispatch = useDispatch()
+
+  // Reset Form
+  const resetForm = () => {
+    setData(initialState);
+    setConfirmPass(confirmPass);
+  };
+
+  // handle Change in input
+  const handleChange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+
+  // Form Submission
+  const handleSubmit = (e) => {
+    setConfirmPass(true);
+    e.preventDefault();
+    if (isSignUp) {
+      data.password === data.confirmpass
+        ? dispatch(signUp(data, navigate))
+        : setConfirmPass(false);
+    } else {
+      dispatch(logIn(data, navigate));
+    }
+  };
+
 
   return (
-    <Box m="20px">
-      <Header title="TEAM" subtitle="Managing the Team Members" />
-      <Box
-        m="40px 0 0 0"
-        height="75vh"
-        sx={{
-          "& .MuiDataGrid-root": {
-            border: "none",
-          },
-          "& .MuiDataGrid-cell": {
-            borderBottom: "none",
-          },
-          "& .name-column--cell": {
-            color: colors.greenAccent[300],
-          },
-          "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: colors.blueAccent[700],
-            borderBottom: "none",
-          },
-          "& .MuiDataGrid-virtualScroller": {
-            backgroundColor: colors.primary[400],
-          },
-          "& .MuiDataGrid-footerContainer": {
-            borderTop: "none",
-            backgroundColor: colors.blueAccent[700],
-          },
-          "& .MuiCheckbox-root": {
-            color: `${colors.greenAccent[200]} !important`,
-          },
-        }}
-      >
-        <DataGrid checkboxSelection rows={mockDataTeam} columns={columns} />
-      </Box>
+
+   <Box display="flex" >
+
+   <Box ml="0px" sx={{ width: 1/5 }}  >
+    <Sidebar isSidebar={isSidebar} />
+    </Box>
+
+    <Box m="20px"  sx={{ width: 1 }}>
+    <Topbar setIsSidebar={setIsSidebar} />
+    <Header title="Add a new Admin" subtitle="" />
+
+
+    <div className="Auth1">
+      {/* left side */}
+
+      {/* right form side */}
+
+      <div className="a-right1">
+        <form className="infoForm authForm1" onSubmit={handleSubmit}>
+         
+          {isSignUp && (
+            
+            
+            <div className="addAdmin">
+            <div>
+              <input
+                required
+                type="text"
+                placeholder="First Name"
+                className="infoInput"
+                name="firstname"
+                value={data.firstname}
+                onChange={handleChange}
+              />
+              <input
+                required
+                type="text"
+                placeholder="Last Name"
+                className="infoInput"
+                name="lastname"
+                value={data.lastname}
+                onChange={handleChange}
+              />
+            
+       
+            </div>
+
+            <div>
+          
+            <input
+              required
+              type="text"
+              placeholder="Email"
+              className="infoInput"
+              name="username"
+              value={data.username}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <input
+              required
+              type="password"
+              className="infoInput"
+              placeholder="Password"
+              name="password"
+              value={data.password}
+              onChange={handleChange}
+            />
+            
+              <input
+                required
+                type="password"
+                className="infoInput"
+                name="confirmpass"
+                placeholder="Confirm Password"
+                onChange={handleChange}
+              />
+           </div>
+          
+          
+</div>
+          )}
+
+          <span
+            style={{
+              color: "red",
+              fontSize: "12px",
+              alignSelf: "flex-end",
+              marginRight: "5px",
+              display: confirmPass ? "none" : "block",
+            }}
+          >
+            *Confirm password is not same
+          </span>
+          <div>
+            <span
+              style={{
+                fontSize: "12px",
+                cursor: "pointer",
+                textDecoration: "underline",
+              }}
+              onClick={() => {
+                resetForm();
+                setIsSignUp((prev) => !prev);
+              }}
+            >
+              {isSignUp
+                ? ""
+                : "Don't have an account Sign up"}
+            </span>
+            <button
+              className="button infoButton"
+              type="Submit"
+              disabled={loading}
+            >
+              {loading ? "Loading..." : isSignUp ? "Add Admin" : "Login"}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+   
+    
+      
+    </Box>
     </Box>
   );
 };
+
 
 export default Team;

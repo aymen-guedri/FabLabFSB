@@ -4,10 +4,9 @@ import Topbar from "./pages/global/Topbar";
 import Sidebar from "./pages/global/Sidebar";
 import Dashboard from "./pages/dashboard";
 import Team from "./pages/team";
-import Invoices from "./pages/invoices";
+import Post from "./pages/Post";
 import Contacts from "./pages/contacts";
 import Bar from "./pages/bar";
-import Form from "./pages/form";
 import Line from "./pages/line";
 import Pie from "./pages/pie";
 import FAQ from "./pages/faq";
@@ -36,10 +35,7 @@ function App() {
       }}>
           
           <main className="content">
-          
-       
-     
-      
+
           <div className="blur" style={{ top: "-18%", right: "0" }}></div>
           <div className="blur" style={{ top: "36%", left: "-8rem" }}></div>
             <Routes>
@@ -47,14 +43,13 @@ function App() {
               <Route path="/home" element={user ? <Dashboard /> : <Navigate to="../auth" />}/>
               <Route path="/auth" element={user ? <Navigate to="../home" /> : <Auth />}/> 
               <Route path="/team" element={user ? <Team />:<Navigate to="../auth" />} />
-              <Route path="/contacts" element={user ? <Contacts />: <Navigate to="../auth" />} />
-              <Route path="/invoices" element={user ? <Invoices />: <Navigate to="../auth" />} />
-              <Route path="/form" element={user ? <Form />: <Navigate to="../auth" />} />
+              <Route path="/printer" element={user ? <Line />: <Navigate to="../auth" />} />
+              <Route path="/camera" element={user ? <FAQ />: <Navigate to="../auth" />} />
+              <Route path="/post" element={user ? <Post />: <Navigate to="../auth" />} />
+
               <Route path="/bar" element={user ? <Bar />: <Navigate to="../auth" />} />
               <Route path="/pie" element={user ? <Pie />: <Navigate to="../auth" />} />
-              <Route path="/line" element={user ? <Line />: <Navigate to="../auth" />} />
-              <Route path="/faq" element={user ? <FAQ />: <Navigate to="../auth" />} />
-         
+              <Route path="/contacts" element={user ? <Contacts />: <Navigate to="../auth" />} />
               <Route path="/geography" element={<Geography />} />
             </Routes>
           </main>

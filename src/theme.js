@@ -130,7 +130,7 @@ export const themeSettings = (mode) => {
         ? {
             // palette values for dark mode
             primary: {
-              main: colors.primary[500],
+              main: colors.primary[700],
             },
             secondary: {
               main: colors.greenAccent[500],
@@ -141,7 +141,7 @@ export const themeSettings = (mode) => {
               light: colors.grey[100],
             },
             background: {
-              default: colors.primary[500],
+              default: colors.primary[700],
             },
           }
         : {
@@ -158,7 +158,7 @@ export const themeSettings = (mode) => {
               light: colors.grey[100],
             },
             background: {
-              default: "#fcfcfc",
+              default: "hsl(223,10%,80%)",
             },
           }),
     },

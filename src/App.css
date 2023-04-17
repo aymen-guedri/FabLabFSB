@@ -53,12 +53,7 @@ body,
 
 /* blur */
 .blur {
-  position: absolute;
-  width: 22rem;
-  height: 14rem;
-  border-radius: 50%;
-  background: #a6ddf0;
-  filter: blur(72px);
+  
 }
 
 .button {
@@ -88,31 +83,6 @@ body,
 
 
 
-
-/* Form Styling */
-.infoForm{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-.infoInput{
-  border: none;
-  outline: none;
-  background-color: var(--inputColor);
-  border-radius: 8px;
-  padding: 20px;
-  flex:1;
-}
-
-.infoForm>div{
-  display: flex;
-  gap: 1rem;
-  height: 2rem;
-  width: 90%;
-}
 
 .infoButton{
   width: 6rem;

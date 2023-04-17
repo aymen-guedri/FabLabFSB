@@ -1,0 +1,88 @@
+.Auth1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    gap: 4rem;
+    position: relative;
+   
+    margin-top: -10%;
+    border-radius: 30px;
+  }
+  
+  .Auth1 > div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .Auth {
+      display: flex;
+      flex-direction: column;
+      gap: 10;
+      
+    }
+    .Auth .a-left > img{
+      width: 6rem;
+      height:6rem;
+    }
+  
+    .Auth .a-left .Webname >  h1{
+  
+      font-size: 2rem;
+      justify-content: center;
+      align-items: center;
+     }
+  
+     .Auth .a-left .Webname >  h6{
+      display: none;
+      font-size: 0.8rem;
+      justify-content: center;
+      align-items: center;
+     }
+  
+     .Auth .a-right .authForm {
+     width: 100%;
+    }
+    .Auth .a-right .authForm input{
+      width: 18px;
+     }
+     
+  
+  
+    
+  }
+  
+  
+  
+  /* right side */
+  
+  .a-right1{
+    max-width: 400px;
+  }
+  
+  
+  .authForm1{
+      background-color:aliceblue;
+      border-radius: 1rem;
+      padding: 1rem;
+      height: 300px;
+
+      
+  }
+  
+  .authForm1>div{
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      margin: 0px;
+  }
+
+
+
+  .addAdmin > div > input {
+    margin: 10px;
+  }
