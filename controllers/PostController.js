@@ -1,9 +1,7 @@
 import PostModel from "../models/postModel.js";
-import UserModel from "../models/userModel.js";
 import mongoose from "mongoose";
 
 // creating a post
-
 export const createPost = async (req, res) => {
   const newPost = new PostModel(req.body);
 
@@ -16,7 +14,6 @@ export const createPost = async (req, res) => {
 };
 
 // get a post
-
 export const getPost = async (req, res) => {
   const id = req.params.id;
 
@@ -84,39 +81,13 @@ export const likePost = async (req, res) => {
 export const getTimelinePosts = async (req, res) => {
   const userId = req.params.id
   try {
-    const currentUserPosts = await PostModel.find({ userId: userId });
-
-    const followingPosts = await UserModel.aggregate([
-      { 
-        $match: {
-          _id: new mongoose.Types.ObjectId(userId),
-        },
-      },
-      {
-        $lookup: {
-          from: "posts",
-          localField: "following",
-          foreignField: "userId",
-          as: "followingPosts",
-        },
-      },
-      {
-        $project: {
-          followingPosts: 1,
-          _id: 0,
-        },
-      },
-    ]);
-
+    const allPosts = await PostModel.find({});
     res.status(200).json(
-      currentUserPosts
-        .concat(...followingPosts[0].followingPosts)
+      allPosts
         .sort((a, b) => {
           return new Date(b.createdAt) - new Date(a.createdAt);
         })
-        
     );
-    
   } catch (error) {
     res.status(500).json(error);
   }
