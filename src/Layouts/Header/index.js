@@ -115,7 +115,11 @@ const Header = ({ storedTheme, setStoredTheme, ...rest }) => {
               storedTheme === "dark"
                 ? { color:"white",cursor: "pointer" }
                 : { color:"black",cursor: "pointer" }
-            }> <span className="tx1">Fab</span><span className="tx2">Lab</span><span className="tx3">FSB</span></p>
+            }> <span className="tx1">Fab</span><span style={
+              storedTheme === "dark"
+                ? { color:"#00CDFF",cursor: "pointer" }
+                : { color:"blue",cursor: "pointer" }
+            }>Lab</span><span className="tx3">FSB</span></p>
             <img
               className="mobileLogo cursor-pointer"
               src={storedTheme === "dark" ? DarkMobileLogo : LightMobileLogo}
@@ -287,13 +291,7 @@ const Header = ({ storedTheme, setStoredTheme, ...rest }) => {
                           : { color:"#111111",fontSize:"11px",fontWeight:"600",cursor:"pointer"}
                       }>{t("Events")}</a>
                   </li>
-                  <li>
-                    <a href="/#offres"  style={
-                        storedTheme === "dark"
-                          ? { color:"#e9e8e8",fontSize:"11px",fontWeight:"600",cursor:"pointer"}
-                          : { color:"#111111",fontSize:"11px",fontWeight:"600",cursor:"pointer"}
-                      }>{t("offre")}</a>
-                  </li>
+                  
                   <li>
                     <a href="/#team"  style={
                         storedTheme === "dark"

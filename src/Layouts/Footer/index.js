@@ -139,11 +139,7 @@ const Footer = ({ storedTheme, setStoredTheme, ...rest }) => {
                                 ? { color: "white",textAlign:"start" }
                                 : { color:"black",textAlign:"start"  }
                             } href="#team">{t("prof")}</a></li>
-                                <li><a style={
-                              storedTheme === "dark"
-                                ? { color: "white",textAlign:"start" }
-                                : { color:"black",textAlign:"start"  }
-                            } href="#offres">{t("offre")}</a></li>
+                                
                                 <li><a style={
                               storedTheme === "dark"
                                 ? { color: "white",textAlign:"start" }

@@ -81,41 +81,25 @@ const Team = ({ storedTheme, setStoredTheme, ...rest }) => {
 								<img src={AymenImg} alt="Developer"/>
 								<div class="member-info">
 									<h3>Aymen Guedri</h3>
-									<p>{t("developer")}</p>
+									<p style={{fontSize:'10px',paddingRight:"20px"}}>{t("developer")}</p>
 								</div>
 							</div>
 						</div>
 						
-						<div class="member-details">
-							<div>
-								<img src={AymenImg} alt="UI Designer"/>
-								<div class="member-info">
-									<h3>Someone</h3>
-									<p>UI Designer</p>
-								</div>
-							</div>
-						</div>
+						
 						
 						<div class="member-details">
 							<div>
 								<img src={AymenImg}/>
 								<div class="member-info">
-									<h3>David Warner</h3>
-									<p>UI Designer</p>
+									<h3>Mr Imed maatouk</h3>
+									<p style={{fontSize:'10px',paddingRight:"20px"}}>CEO</p>
 								</div>
 							</div>
 						</div>
 					</li>
 					<li class="clearfix">
-						<div class="member-details">
-							<div>
-								<img src={AymenImg} alt="UI Designer"/>
-								<div class="member-info">
-									<h3>John Doe</h3>
-									<p>UI Designer</p>
-								</div>
-							</div>
-						</div>
+						
 						
 						<div class="member-details">
 							<div>
@@ -138,15 +122,7 @@ const Team = ({ storedTheme, setStoredTheme, ...rest }) => {
 						</div>
 					</li>
 					<li class="clearfix">
-						<div class="member-details">
-							<div>
-								<img src={AymenImg} alt="UI Designer"/>
-								<div class="member-info">
-									<h3>John Doe</h3>
-									<p>UI Designer</p>
-								</div>
-							</div>
-						</div>
+						
 						
 						<div class="member-details">
 							<div>

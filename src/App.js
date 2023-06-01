@@ -44,17 +44,16 @@ function App() {
 
 
 
-
     (function(d, m){
-      var kommunicateSettings = 
-          {"appId":"58684b090878f5375ef61651806b5a0b","popupWidget":true,"automaticChatOpenOnNavigation":true};
-      var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
-      s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
-      var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
-      window.kommunicate = m; m._globals = kommunicateSettings;
+        var kommunicateSettings = 
+            {"appId":"152404faf1c779baf1192fa97fb11e208","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
     })(document, window.kommunicate || {});
-    /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
-    
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+
 
   return (
     <>
@@ -96,7 +95,7 @@ function App() {
       </div>
       </Router>
 
-      <Router>
+{ /*     <Router>
       <div >
         <Offre className={` bg-dark`}
           storedTheme={storedTheme}
@@ -104,7 +103,7 @@ function App() {
         ></Offre>
       </div>
       </Router>
-
+*/}
       <Router>
       <div >
         <Team className={` bg-dark`}

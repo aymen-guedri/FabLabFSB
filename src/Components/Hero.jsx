@@ -106,7 +106,7 @@ const Hero = ({ storedTheme, setStoredTheme, ...rest }) => {
 
                 
                 
-                <Button ><a href="" target="_blank" className="myresume"> {t("start")}</a></Button>
+               {/* <Button ><a href="" target="_blank" className="myresume"> {t("start")}</a></Button> */}
   
  
                 

@@ -76,7 +76,7 @@ const Stats = ({ storedTheme, setStoredTheme, ...rest }) => {
                             style={
                               storedTheme === "dark"
                                 ? { backgroundColor: "#DFF9FF",color:"black"  }
-                                : { backgroundColor: "#4AFF9A",color:"black" }
+                                : { backgroundColor: "#280558",color:"white" }
                             }
                             >
                               <Roll>
@@ -91,7 +91,7 @@ const Stats = ({ storedTheme, setStoredTheme, ...rest }) => {
                               <Card style={
                               storedTheme === "dark"
                               ? { backgroundColor: "#DFF9FF",color:"black"  }
-                                : { backgroundColor: "#4AFF9A",color:"black" }
+                                : { backgroundColor: "#280558",color:"white" }
                             }>
                               <Roll>
                               <article>
@@ -105,7 +105,7 @@ const Stats = ({ storedTheme, setStoredTheme, ...rest }) => {
                               <Card style={
                               storedTheme === "dark"
                               ? { backgroundColor: "#DFF9FF",color:"black"  }
-                                : { backgroundColor: "#4AFF9A",color:"black" }
+                                : { backgroundColor: "#280558",color:"white" }
                             }>
                               <Roll>
                               <article>

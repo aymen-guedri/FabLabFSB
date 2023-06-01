@@ -869,22 +869,22 @@ width: 100vw;
   align-items: center;
   justify-content: center;
   width: 200vw;
-  height: 13vh;
+  height: 20vh;
 }
 .marquee{
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(191, 247, 225);
+  background: rgb(240, 255, 249);
   box-shadow: 5px 5px 20px #00000050, -5px -5px 15px #ffffff0a;
-  height: 11vh;
+  height: 17vh;
   width: 12.5vw;
 	/*line 43 is very important. since we have 16 items, width of the Marquee which is 200vw must be devided between them. which turns out to be 12.5vw*/
   margin: 10px;
   border-radius: 15px;
 }
 .marquee:hover{
-  background: #1d1d1d;
+  background: #ffffff;
 }
 .icon {
 	color: #cccccc;
