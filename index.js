@@ -57,7 +57,7 @@ app.use('/message', MessageRoute);
 // Add the reservation creation route
 app.post('/api/reservations', (req, res) => {
   // Extract form data from request body
-  const { material, firstName, lastName, email, phone, comments } = req.body;
+  const { material, firstName, lastName, email, phone,type,dateJ,time1,time2, comments,prix } = req.body;
 
   // Create the reservation object with timestamp
   const reservation = new ReservationModel({
@@ -66,7 +66,12 @@ app.post('/api/reservations', (req, res) => {
     lastName,
     email,
     phone,
+    type,
+    dateJ,
+    time1,
+    time2,
     comments,
+    prix,
   });
 
   // Save the reservation to MongoDB
