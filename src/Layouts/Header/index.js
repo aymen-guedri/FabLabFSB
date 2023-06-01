@@ -162,7 +162,7 @@ const Header = ({ storedTheme, setStoredTheme, ...rest }) => {
 
                       <li>
                         <a
-                          href="fablab-fsb-user.vercel.app"
+                          href="https://fablab-fsb-user.vercel.app/auth" target="_blank"
                           style={{ cursor: "pointer",fontSize: "1.1rem"}}
                         >
                           As a User
@@ -264,7 +264,7 @@ const Header = ({ storedTheme, setStoredTheme, ...rest }) => {
 
                       <li>
                         <a
-                          href="fablab-fsb-user.vercel.app"
+                         href="https://fablab-fsb-user.vercel.app/auth" target="_blank"
                           style={{ cursor: "pointer",fontSize: "1.1rem"}}
                         >
                           As a User
