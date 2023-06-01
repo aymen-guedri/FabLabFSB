@@ -6,6 +6,9 @@ import Profile from "./pages/Profile/Profile";
 import { useSelector } from "react-redux";
 import Chat from "./pages/Chat/Chat";
 import Guide from "./pages/Guide/Guide";
+import Order from "./pages/Order/order";
+import WorkShop from "./pages/WorkShop/WorkShop";
+import Offers from "./pages/Offers/Offers";
 
 
 function App() {
@@ -47,12 +50,27 @@ function App() {
           path="/chat"
           element={user ? <Chat /> : <Navigate to="../auth" />}
         />
+        <Route
+          path="/orders"
+          element={user ? <Order /> : <Navigate to="../auth" />}
+        />
 
 
           <Route
           path="/guide"
           element={user ? <Guide /> : <Navigate to="../auth" />}
         />
+
+        <Route
+          path="/workshops"
+          element={user ? <WorkShop /> : <Navigate to="../auth" />}
+        />
+
+          <Route
+          path="/offers"
+          element={user ? <Offers /> : <Navigate to="../auth" />}
+        />
+
       </Routes>
     </div>
   );

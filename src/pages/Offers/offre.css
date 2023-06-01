@@ -1,0 +1,148 @@
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600);
+.pricing {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  color: #ffffff;
+  text-align: left;
+  font-size: 16px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 10px 10px 600px 10px;
+  padding: 100px;
+  background-color: none;
+}
+.pricing img{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: -1;
+}
+.pricing .plan {
+  margin: 0;
+  width: 25%;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  border: 3px solid #442232;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  background-color: #5f3047;
+}
+.pricing .plan:hover i,
+.pricing .plan.hover i {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.pricing .plan:first-of-type {
+  border-radius: 8px 0 0 8px;
+}
+.pricing .plan:last-of-type {
+  border-radius: 0 8px 8px 0;
+}
+.pricing * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+.pricing header {
+  background-color: #5f3047;
+  color: #ffffff;
+}
+.pricing .plan-title {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  margin: 0;
+  padding: 20px 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.pricing .plan-title:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 40px 300px 0 0;
+  border-color: rgba(0, 0, 0, 0.5) transparent transparent;
+}
+.pricing .plan-cost {
+  padding: 40px 20px 10px;
+  text-align: right;
+}
+.pricing .plan-price {
+  font-weight: 5;
+  font-size: 1em;
+}
+.pricing .plan-type {
+  opacity: 0.8;
+  font-size: 0.7em;
+  text-transform: uppercase;
+}
+.pricing .plan-features {
+  padding: 0 0 20px;
+  margin: 0;
+  min-height: 400px;
+  list-style: outside none none;
+}
+.pricing .plan-features li {
+  padding: 8px 5%;
+}
+.pricing .plan-features i {
+  margin-right: 8px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.pricing .plan-select {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+}
+.pricing .plan-select a {
+  background-color: #442232;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-size: 0.75em;
+  font-weight: 600;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  display: inline-block;
+}
+.pricing .plan-select a:hover {
+  background-color: #552a3f;
+}
+.pricing .featured {
+  margin-top: -10px;
+  border-color: #331926;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  border-radius: 8px;
+}
+.pricing .featured .plan-select {
+  padding: 30px 20px;
+}
+@media only screen and (max-width: 767px) {
+  .pricing .plan {
+    width: 50%;
+  }
+  .pricing .plan-title,
+  .pricing .plan-select a {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  .pricing .plan-select,
+  .snipricingp1404 .featured .plan-select {
+    padding: 20px;
+  }
+  .pricing .featured {
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: 440px) {
+  .pricing .plan {
+    width: 100%;
+  }
+}

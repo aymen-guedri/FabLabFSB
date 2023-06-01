@@ -20,7 +20,10 @@
     "i18next": "^22.4.14",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-xhr-backend": "^3.2.2",
+    "nodemailer": "^6.9.3",
     "react": "^17.0.2",
+    "react-calendar": "^4.2.1",
+    "react-datepicker": "^4.12.0",
     "react-dom": "^17.0.2",
     "react-dropzone": "^14.2.3",
     "react-file-base64": "^1.0.3",
@@ -36,6 +39,7 @@
     "redux-thunk": "^2.4.1",
     "socket.io-client": "^4.5.1",
     "styled-components": "^5.3.9",
+    "swiper": "^9.3.0",
     "timeago.js": "^4.0.2",
     "web-vitals": "^2.1.0",
     "yup": "^1.0.2"
