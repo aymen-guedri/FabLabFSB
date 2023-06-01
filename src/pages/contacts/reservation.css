@@ -1,0 +1,82 @@
+/* Styling for the table */
+.reservations-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Styling for the table header */
+  .reservations-table th {
+    background-color: #00d9ff;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  /* Styling for the table cells */
+  .reservations-table td {
+    padding: 10px;
+    border-bottom: 1px solid #959595;
+  }
+  
+  /* Styling for alternate table rows */
+  .reservations-table tr:nth-child(even) {
+    background-color: #ececec;
+    color: black;
+  }
+  
+  /* Hover effect on table rows */
+  .reservations-table tr:hover {
+    background-color: #0a003b;
+    color: #fff;
+  }
+  
+  /* Styling for the timestamp column */
+  .reservations-table td.timestamp {
+    white-space: nowrap;
+  }
+  
+  /* Styling for the table caption */
+  .reservations-table caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for the success message */
+  #success-message {
+    margin-top: 20px;
+    color: green;
+  }
+  
+  /* Styling for buttons */
+  .button {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-primary {
+    background-color: #00d9ff;
+    color: #fff;
+    border: none;
+  }
+  
+  .button-primary:hover {
+    background-color: #00b3e6;
+  }
+  
+  .button-danger {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+  }
+  
+  .button-danger:hover {
+    background-color: #ff1a1a;
+  }
+  

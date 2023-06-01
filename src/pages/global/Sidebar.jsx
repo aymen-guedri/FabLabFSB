@@ -120,7 +120,8 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             </Link>
-            
+
+            <Link to="/users" style={{ color: "#FE6000"}}>
             <Item
               title="Users"
               to="/users"
@@ -128,13 +129,18 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
+            </Link>
+
+
+            <Link to="/orders" style={{ color: "#FE6000"}}>
             <Item
               title="Orders"
-              to="/invoices"
+              to="/orders"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
+            </Link>
 
             <Typography
               variant="h6"
@@ -143,6 +149,7 @@ const Sidebar = () => {
             >
               Pages
             </Typography>
+            <Link to="https://forum-7dc12.web.app/" target="_blank" style={{ color: "#FE6000"}}>
             <Item
               title="Forum"
               to="/"
@@ -150,6 +157,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
+            </Link>
             <Link to="/post" style={{ color: "#FE6000"}}>
             <Item
               title="Post"
@@ -186,13 +194,7 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             </Link>
-            <Item
-              title="Materials"
-              to="/geography"
-              icon={<EngineeringIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
+            
           </Box>
          
         </Menu>

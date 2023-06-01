@@ -14,13 +14,71 @@ import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
 import Sidebar from "../../pages/global/Sidebar";
 import Topbar from "../../pages/global/Topbar";
-import { useState } from "react";
+import { orange } from "@mui/material/colors";
+import UserCount from "./UserCount ";
 
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import TableUsers from "../UsersList/TableUsers";
 
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isSidebar, setIsSidebar] = useState(true);
+
+
+
+
+
+
+
+
+  const [reservations, setReservations] = useState([]);
+  const [reservationCount, setReservationCount] = useState(0);
+
+  useEffect(() => {
+    fetchReservations();
+  }, []);
+
+ const fetchReservations = () => {
+  axios
+    .get('/api/reservations')
+    .then(response => {
+      const sortedReservations = response.data.sort((a, b) => b.timestamp - a.timestamp);
+      setReservations(sortedReservations);
+      setReservationCount(sortedReservations.length); // Set the reservation count
+    })
+    .catch(error => {
+      console.error(error);
+    });
+};
+
+
+  const handleAcceptReservation = (reservation) => {
+    // Show the message only for the accepted reservation
+    reservation.showAcceptedMessage = true;
+    setReservations([...reservations]);
+  };
+
+  const handleDeleteReservation = (reservationId) => {
+    // Make an API request to delete the reservation
+    axios
+      .delete(`/api/reservations/${reservationId}`)
+      .then(response => {
+        // If the deletion was successful, fetch updated reservations
+        fetchReservations();
+      })
+      .catch(error => {
+        // Handle the error here, if needed
+        console.error(error);
+      });
+  };
+
+
+
+
+
+
   return (
 
     <Box display="flex" >
@@ -39,15 +97,15 @@ const Dashboard = () => {
         
           <Button
             sx={{
-              backgroundColor: colors.blueAccent[700],
-              color: colors.grey[100],
+              backgroundColor: "orange",
+              color: "white",
               fontSize: "14px",
               fontWeight: "bold",
               padding: "10px 20px",
             }}
           >
-            <DownloadOutlinedIcon sx={{ mr: "10px" }} />
-            Download Reports
+            <a href="https://aymenguedri.me/" target="_blank">Developed By Aymen Guedri</a>
+            
           </Button>
         </Box>
       </Box>
@@ -71,11 +129,12 @@ const Dashboard = () => {
           alignItems="center"
           justifyContent="center"
         >
+        
           <StatBox
-            title="12"
-            subtitle="Emails received"
-            progress="0.75"
-            increase="+14%"
+            title={reservationCount}
+             
+            subtitle="Total Reservations"
+            
             icon={
               <EmailIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
@@ -83,6 +142,7 @@ const Dashboard = () => {
             }
           />
         </Box>
+        
         <Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
@@ -91,29 +151,9 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="431,225"
-            subtitle="Sales Obtained"
-            progress="0.50"
-            increase="+21%"
-            icon={
-              <PointOfSaleIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="32,441"
-            subtitle="New Students and Users"
-            progress="0.30"
-            increase="+5%"
+            title="4"
+            subtitle="Number of Students and Users"
+            
             icon={
               <PersonAddIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
@@ -121,6 +161,7 @@ const Dashboard = () => {
             }
           />
         </Box>
+        
         <Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
@@ -129,16 +170,24 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="13"
-            subtitle="Available materials"
-            progress="0.80"
-            increase="+43%"
+            title="6"
+            subtitle="Materials to use"
+            
             icon={
               <TrafficIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
               />
             }
           />
+        </Box>
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.primary[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <h5>3D Printing</h5>
         </Box>
 
         {/* ROW 2 */}
@@ -154,33 +203,11 @@ const Dashboard = () => {
             justifyContent="space-between"
             alignItems="center"
           >
-            <Box>
-              <Typography
-                variant="h5"
-                fontWeight="600"
-                color={colors.grey[100]}
-              >
-                Revenue Generated
-              </Typography>
-              <Typography
-                variant="h3"
-                fontWeight="bold"
-                color={colors.greenAccent[500]}
-              >
-                TND 59,342.32
-              </Typography>
-            </Box>
-            <Box>
-              <IconButton>
-                <DownloadOutlinedIcon
-                  sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
-                />
-              </IconButton>
-            </Box>
+          <h5 style={{color:"orange"}}>Users List</h5>
+          <TableUsers />
+            
           </Box>
-          <Box height="250px" m="-20px 0 0 0">
-            <LineChart isDashboard={true} />
-          </Box>
+          
         </Box>
         <Box
           gridColumn="span 4"
@@ -197,18 +224,19 @@ const Dashboard = () => {
             p="15px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Transactions
+            Surveillance camera
             </Typography>
           </Box>
-          {mockTransactions.map((transaction, i) => (
+         
             <Box
-              key={`${transaction.txId}-${i}`}
+           
               display="flex"
               justifyContent="space-between"
               alignItems="center"
-              borderBottom={`4px solid ${colors.primary[500]}`}
+              
               p="15px"
             >
+            {/*
               <Box>
                 <Typography
                   color={colors.greenAccent[500]}
@@ -221,7 +249,10 @@ const Dashboard = () => {
                   {transaction.user}
                 </Typography>
               </Box>
-              <Box color={colors.grey[100]}>{transaction.date}</Box>
+              */}
+              {/* <Box color={colors.grey[100]}>{transaction.date}</Box>   */}
+         
+            {/*
               <Box
                 backgroundColor={colors.greenAccent[500]}
                 p="5px 10px"
@@ -229,11 +260,13 @@ const Dashboard = () => {
               >
                 ${transaction.cost}
               </Box>
+            */}
             </Box>
-          ))}
+            
+         
         </Box>
-
-        {/* ROW 3 */}
+{/*
+       
         <Box
           gridColumn="span 4"
           gridRow="span 2"
@@ -260,6 +293,7 @@ const Dashboard = () => {
             <Typography>Includes extra misc expenditures and costs</Typography>
           </Box>
         </Box>
+        
         <Box
           gridColumn="span 4"
           gridRow="span 2"
@@ -293,10 +327,12 @@ const Dashboard = () => {
             <GeographyChart isDashboard={true} />
           </Box>
         </Box>
+      */}
       </Box>
     </Box>
 
     </Box>
+ 
   );
 };
 

@@ -1,4 +1,4 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, TextField, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -8,16 +8,15 @@ import Topbar from "../../pages/global/Topbar";
 import PostSide from "../../components/PostSide/PostSide";
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ReservationsTable from "./ReservationsTable ";
+import TableUsers from "./TableUsers";
 
-const Contacts = () => {
+
+const UsersList = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
   const handleFormSubmit = (values) => {
     console.log(values);
   };
   const [isSidebar, setIsSidebar] = useState(true);
-
-  
 
   return (
 
@@ -29,9 +28,10 @@ const Contacts = () => {
 
     <Box m="20px"  sx={{ width: 1 }}>
     <Topbar setIsSidebar={setIsSidebar} />
-    <Header title="FabLab FSB Reservation" subtitle="" />
+    <Header title="FabLab FSB Users" subtitle="" />
 
-    <ReservationsTable />
+    <TableUsers/>
+    
     
       
     </Box>
@@ -40,4 +40,4 @@ const Contacts = () => {
 };
 
 
-export default Contacts;
+export default UsersList

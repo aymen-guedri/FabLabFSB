@@ -15,6 +15,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import { useSelector } from "react-redux";
 import Auth from "./pages/Auth/Auth";
+import UsersList from "./pages/UsersList/UsersList";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -46,11 +47,10 @@ function App() {
               <Route path="/printer" element={user ? <Line />: <Navigate to="../auth" />} />
               <Route path="/camera" element={user ? <FAQ />: <Navigate to="../auth" />} />
               <Route path="/post" element={user ? <Post />: <Navigate to="../auth" />} />
+              <Route path="/orders" element={user ? <Contacts />: <Navigate to="../auth" />} />
+              <Route path="/users" element={user ? <UsersList />: <Navigate to="../auth" />} />
 
-              <Route path="/bar" element={user ? <Bar />: <Navigate to="../auth" />} />
-              <Route path="/pie" element={user ? <Pie />: <Navigate to="../auth" />} />
-              <Route path="/contacts" element={user ? <Contacts />: <Navigate to="../auth" />} />
-              <Route path="/geography" element={<Geography />} />
+              
             </Routes>
           </main>
         </div>
