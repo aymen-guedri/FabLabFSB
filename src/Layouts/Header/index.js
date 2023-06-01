@@ -153,7 +153,7 @@ const Header = ({ storedTheme, setStoredTheme, ...rest }) => {
                     
                       <li >
                         <a
-                          href=""
+                          href="https://student-fablab-fsb.vercel.app/auth" target="_blank"
                           style={{ cursor: "pointer",fontSize: "1.1rem"}}
                         >
                           As a Student
@@ -255,7 +255,7 @@ const Header = ({ storedTheme, setStoredTheme, ...rest }) => {
                     
                       <li >
                         <a
-                          href=""
+                          href="https://student-fablab-fsb.vercel.app/auth" target="_blank"
                           style={{ cursor: "pointer",fontSize: "1.1rem"}}
                         >
                           As a Student
